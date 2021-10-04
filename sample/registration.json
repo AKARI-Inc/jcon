@@ -1,0 +1,6 @@
+{
+    "class": "test-class",
+    "name": "Bob",
+    "age": 16,
+    "subjects": ["math", "english"]
+}
