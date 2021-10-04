@@ -25,7 +25,7 @@ def hoge(*args, **krags): # 任意の関数
     ...
     
     
-hoge(json_path)           # jsonのパスを入力にできる。もちろん，Positional変数もKeyword変数も入力できる。
+hoge(json_path)           # jsonのパスを入力にできる。もちろん，元々の引数も入力できる。
 ```
 
 ### 2.3 クラスを名前で登録(新概念)することが可能になり，jsonから文字列で呼び出すことができる
