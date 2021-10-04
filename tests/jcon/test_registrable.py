@@ -13,7 +13,7 @@ def test_registrable():
 
     @BaseCls.register("test")
     class SubCls(BaseCls):
-        def __init__(self, name: str, age: int, subjects: List):
+        def __init__(self, name: str, age: int, subjects: List[str]):
             self.name = name
             self.age = age
             self.subjects = subjects
