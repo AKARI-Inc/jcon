@@ -1,5 +1,5 @@
 {
-    "class": "test-class",
+    "type": "test",
     "name": "Bob",
     "age": 16,
     "subjects": ["math", "english"]
