@@ -7,6 +7,8 @@
 ### 2.1 コンテクストマネージャで簡単にjsonパスから辞書として読み込み
 ```Python
 from jcon import json_read
+
+
 json_path = "path/to/hoge.json"
 with json_read(json_path ) as json_dict:
     ...
@@ -16,6 +18,7 @@ with json_read(json_path ) as json_dict:
 ```Python
 import jcon
 json_path = "path/to/hoge.json"
+
 
 @jcon.configurable        # この一行を追加するだけ！
 def hoge(*args, **krags): # 任意の関数
@@ -39,6 +42,7 @@ json の type 要素から class として呼び出す
 ```Python
 from jcon import Registrable 
 json_path = "path/to/hoge.json"
+
 
 class BaseCls(Registrable):        # 基底クラスは Registrable を継承する。
     def __init__(self):
