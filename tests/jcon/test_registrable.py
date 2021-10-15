@@ -24,3 +24,8 @@ def test_registrable():
         assert json_dict['name'] == instance.name
         assert json_dict['age'] == instance.age
         assert json_dict['subjects'] == instance.subjects
+
+        instance = BaseCls.from_dict(json_dict)
+        assert json_dict['name'] == instance.name
+        assert json_dict['age'] == instance.age
+        assert json_dict['subjects'] == instance.subjects

@@ -147,6 +147,21 @@ class Registrable:
             )
 
     @classmethod
+    def from_dict(cls: Type[T], json_dict: str, *args, **kwargs) -> Type[Instance]:
+        """Get instance with ``dictionary`` initialization.
+
+        Args:
+            cls (Type[T]): subclass which is registered.
+            json_path (str): ``path/to/json``. The key ``type`` should be assigned in ``json`` and the value should be registered by its name.
+
+        Returns:
+            Type[T]: incetance of subclass
+        """
+        subcls = cls.by_name(json_dict.pop('type'))  # type: ignore
+        instance = subcls(*args, **kwargs, **json_dict)
+        return instance
+
+    @classmethod
     def from_json(cls: Type[T], json_path: str, *args, **kwargs) -> Type[Instance]:
         """Get instance with ``json`` initialization.
 
@@ -158,8 +173,8 @@ class Registrable:
             Type[T]: incetance of subclass
         """
         with json_read(json_path) as json_dict:
-            subcls = cls.by_name(json_dict.pop('type'))  # type: ignore
-            instance = subcls(*args, **kwargs, **json_dict)
+            instance = cls.from_dict(  # type: ignore
+                json_dict, *args, **kwargs)
         return instance
 
     @classmethod
