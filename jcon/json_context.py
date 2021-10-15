@@ -4,7 +4,7 @@ import contextlib
 
 @contextlib.contextmanager
 def json_read(jsonpath: str):
-    """Context manager to yield ``dict`` from path which .json is.
+    """Context manager to yield ``dict`` from path in which .json is.
 
     Args:
         jsonpath (``str``): ``path/to/file.json``
