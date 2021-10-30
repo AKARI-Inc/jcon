@@ -147,7 +147,7 @@ class Registrable:
             )
 
     @classmethod
-    def from_dict(cls: Type[T], json_dict: str, *args, **kwargs) -> Type[Instance]:
+    def from_dict(cls: Type[T], json_dict: Dict, *args, **kwargs) -> Type[Instance]:
         """Get instance with ``dictionary`` initialization.
 
         Args:
@@ -157,8 +157,9 @@ class Registrable:
         Returns:
             Type[T]: incetance of subclass
         """
-        subcls = cls.by_name(json_dict.pop('type'))  # type: ignore
-        instance = subcls(*args, **kwargs, **json_dict)
+        json_dict_tmp = json_dict.copy()
+        subcls = cls.by_name(json_dict_tmp.pop('type'))  # type: ignore
+        instance = subcls(*args, **kwargs, **json_dict_tmp)
         return instance
 
     @classmethod
