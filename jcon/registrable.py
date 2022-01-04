@@ -1,3 +1,5 @@
+from _typeshed import OpenTextMode
+
 import importlib
 import inspect
 from collections import defaultdict
@@ -163,7 +165,19 @@ class Registrable:
         return instance
 
     @classmethod
-    def from_json(cls: Type[T], json_path: str, encoding: Optional[str] = None, *args, **kwargs) -> Type[Instance]:
+    def from_json(
+        cls: Type[T],
+        json_path: str,
+        mode: Optional[OpenTextMode] = 'r',
+        buffering: Optional[int] = -1,
+        encoding: Optional[str] = None,
+        errors: Optional[str] = None,
+        newline: Optional[str] = None,
+        closefd: Optional[bool] = True,
+        opener: Optional[Callable] = None,
+        *args,
+        **kwargs
+    ) -> Type[Instance]:
         """Get instance with ``json`` initialization.
 
         Args:
@@ -173,7 +187,16 @@ class Registrable:
         Returns:
             Type[T]: incetance of subclass
         """
-        with json_read(json_path, encoding=encoding) as json_dict:
+        with json_read(
+            json_path,
+            mode=mode,
+            buffering=buffering,
+            encoding=encoding,
+            errors=errors,
+            newline=newline,
+            closefd=closefd,
+            opener=opener,
+        ) as json_dict:
             instance = cls.from_dict(  # type: ignore
                 json_dict, *args, **kwargs)
         return instance
