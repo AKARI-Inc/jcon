@@ -23,6 +23,13 @@ def configurable(
 
     Args:
         func (Callable): Your arbitrary function.
+        mode (Optional[OpenTextMode], optional): An argument same as `open` in stdlib. Defaults to 'r'.
+        buffering (Optional[int], optional): An argument same as `open` in stdlib. Defaults to -1.
+        encoding (Optional[str], optional): An argument same as `open` in stdlib. Defaults to None.
+        errors (Optional[str], optional): An argument same as `open` in stdlib. Defaults to None.
+        newline (Optional[str], optional): An argument same as `open` in stdlib. Defaults to None.
+        closefd (Optional[bool], optional): An argument same as `open` in stdlib. Defaults to True.
+        opener (Optional[Callable], optional): An argument same as `open` in stdlib. Defaults to None.
 
     Returns:
         Callable[[str], Callable]: Wrapped function which is input from ``.json`` path.

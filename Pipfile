@@ -9,6 +9,8 @@ name = "pypi"
 autopep8 = "*"
 flake8 = "*"
 pytest = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
 
 [requires]
 python_version = "3.9"
