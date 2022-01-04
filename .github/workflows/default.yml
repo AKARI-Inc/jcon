@@ -14,6 +14,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
       with:
+        pre-build-command: "pip install sphinx_rtd_theme"
         build-command: "sphinx-build -b singlehtml . _build"
         docs-folder: "docs/"
 
