@@ -1,15 +1,15 @@
 name: CI
 
 on:
-  merge:
+  pull_request:
     branches:    
       - main
+    types: [closed]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    if: github.event.pull_request.merged == true
     steps:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
@@ -21,7 +21,7 @@ jobs:
     - name: Commit documentation changes
       run: |
         git clone https://github.com/AKARI-Inc/jcon.git --branch gh-pages --single-branch gh-pages
-        cp -r docs/_build/html/* gh-pages/
+        cp -r docs/_build/* gh-pages/
         cd gh-pages
         touch .nojekyll
         git config --local user.email "action@github.com"
