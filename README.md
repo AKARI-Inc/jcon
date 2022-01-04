@@ -1,6 +1,7 @@
 # jcon
 
 ## 1. installation
+This package is only dependent on standard library of Python3.
 `pip install git+https://github.com/AKARI-Inc/jcon.git`
 
 ## 2. Usage
@@ -10,7 +11,7 @@ from jcon import json_read
 
 
 json_path = "path/to/hoge.json"
-with json_read(json_path ) as json_dict:
+with json_read(json_path) as json_dict:
     ...
 ```
 
@@ -20,15 +21,15 @@ import jcon
 json_path = "path/to/hoge.json"
 
 
-@jcon.configurable        # この一行を追加するだけ！
+@jcon.configurable        # この一行を追加するだけ。 encoding等を指定する場合は `@jcon.configurable(encoding=hoge)` とする(document参照)。
 def hoge(*args, **krags): # 任意の関数
     ...
     
     
-hoge(json_path)           # jsonのパスを入力にできる。もちろん，元々の引数も入力できる。
+hoge(json_path)           # jsonのパスを入力にできる。もちろん，元々の引数もその後に入力できる。
 ```
 
-### 2.3 クラスを名前で登録(新概念)することが可能になり，jsonから文字列で呼び出すことができる
+### 2.3 クラスを名前で登録(新概念)することが可能になり，jsonから文字列で呼び出すことができる。
 jsonの例
 ```Json
 {
