@@ -26,7 +26,7 @@ jobs:
       - name: Install Dependencies
         run: pipenv install --dev
       - name: Run Tests
-        run: pipenv run pytest test --cov=./jcon --cov-report=xml
+        run: pipenv run pytest --cov --cov-report=xml   
       - name: Upload coverage to Codecov
         if: ${{ matrix.python-version==3.9 }}
         uses: codecov/codecov-action@v1
