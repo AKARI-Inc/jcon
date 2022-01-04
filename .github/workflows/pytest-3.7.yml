@@ -1,6 +1,6 @@
 name: pytest-python3.7
 
-on: [push, pull_request]
+on: [pull_request]
 env:
   COVERAGE_SINGLE: 100
   COVERAGE_TOTAL: 100
@@ -26,7 +26,7 @@ jobs:
         run: |
           pipenv install --dev
       - name: pipenv enable
-        run: pipenv shell
+        run: source $(pipenv --venv)/bin/activate
       - name: pytester-cov
         id: pytester-cov
         uses: alexanderdamiani/pytester-cov@v1.2.0
