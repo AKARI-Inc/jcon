@@ -1,9 +1,9 @@
 name: CI
 
 on:
-  push:
+  merge:
     branches:    
-      - docs/docstring
+      - main
 
 jobs:
   build:
