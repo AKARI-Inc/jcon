@@ -24,3 +24,13 @@ def test_configurable():
         func2(json_path, name="Jason", food="Apple")
     assert func3(json_path, food="Banana") is None
     assert func3(json_path, **{"food": "Chocolate"}) is None
+
+
+def test_configurable_argument():
+    """test function for ``configurable`` in ``jcon/func_decoretor.py``"""
+    @jcon.configurable(encoding="utf-8")
+    def func(name: str, age: int, subjects: List[str]) -> None:
+        print(f"{name} is {age}-year-old and studying {len(subjects)} subjects.")
+
+    json_path = "sample/simple.json"
+    assert func(json_path) is None

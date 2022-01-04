@@ -3,7 +3,7 @@ import contextlib
 
 
 @contextlib.contextmanager
-def json_read(jsonpath: str):
+def json_read(jsonpath: str, *args, **kwargs):
     """Context manager to yield ``dict`` from path in which .json is.
 
     Args:
@@ -12,7 +12,7 @@ def json_read(jsonpath: str):
     Yields:
         ``dict``: return ``dict`` read from ``jsonpath``
     """
-    json_file = open(jsonpath, 'r')
+    json_file = open(jsonpath, *args, **kwargs)
     try:
         yield json.load(json_file)
     finally:
