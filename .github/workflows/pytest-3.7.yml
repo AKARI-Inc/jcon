@@ -24,7 +24,7 @@ jobs:
           sudo apt install pipenv
       - name: Install Dependencies
         run: |
-        1pipenv install --dev
+          pipenv install --dev
       - name: pipenv enable
         run: pipenv shell
       - name: pytester-cov
