@@ -1,15 +1,16 @@
 name: CI
 
 on:
-  merge:
+  pull_request:
     branches:    
       - main
+    types: [closed]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    if: github.event.pull_request.merged == true
     steps:
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
