@@ -1,9 +1,9 @@
 name: CI
 
 on:
-  merge:
+  push:
     branches:    
-      - main
+      - dev/github-actions
 
 jobs:
   build:
