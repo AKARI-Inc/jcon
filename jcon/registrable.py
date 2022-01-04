@@ -158,7 +158,7 @@ class Registrable:
 
         Args:
             cls (Type[T]): subclass which is registered.
-            json_path (str): ``path/to/json``. The key ``type`` should be assigned in ``json`` and the value should be registered by its name.
+            json_dict (Dict): the dictionary which have the argument value with its name as key.
 
         Returns:
             Type[T]: incetance of subclass
@@ -187,9 +187,16 @@ class Registrable:
         Args:
             cls (Type[T]): subclass which is registered.
             json_path (str): ``path/to/json``. The key ``type`` should be assigned in ``json`` and the value should be registered by its name.
+            mode (Optional[OpenTextMode], optional): An argument same as `open` in stdlib. Defaults to 'r'.
+            buffering (Optional[int], optional): An argument same as `open` in stdlib. Defaults to -1.
+            encoding (Optional[str], optional): An argument same as `open` in stdlib. Defaults to None.
+            errors (Optional[str], optional): An argument same as `open` in stdlib. Defaults to None.
+            newline (Optional[str], optional): An argument same as `open` in stdlib. Defaults to None.
+            closefd (Optional[bool], optional): An argument same as `open` in stdlib. Defaults to True.
+            opener (Optional[Callable], optional): An argument same as `open` in stdlib. Defaults to None.
 
         Returns:
-            Type[T]: incetance of subclass
+            Type[Instance]: incetance of subclass
         """
         with json_read(
             json_path,

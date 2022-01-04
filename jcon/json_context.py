@@ -8,6 +8,13 @@ def json_read(jsonpath: str, *args, **kwargs):
 
     Args:
         jsonpath (``str``): ``path/to/file.json``
+        mode (Optional[OpenTextMode], optional): An argument same as `open` in stdlib. Defaults to 'r'.
+        buffering (Optional[int], optional): An argument same as `open` in stdlib. Defaults to -1.
+        encoding (Optional[str], optional): An argument same as `open` in stdlib. Defaults to None.
+        errors (Optional[str], optional): An argument same as `open` in stdlib. Defaults to None.
+        newline (Optional[str], optional): An argument same as `open` in stdlib. Defaults to None.
+        closefd (Optional[bool], optional): An argument same as `open` in stdlib. Defaults to True.
+        opener (Optional[Callable], optional): An argument same as `open` in stdlib. Defaults to None.
 
     Yields:
         ``dict``: return ``dict`` read from ``jsonpath``
