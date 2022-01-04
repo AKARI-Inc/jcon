@@ -2,8 +2,8 @@ name: pytest-python3.7
 
 on: [pull_request]
 env:
-  COVERAGE_SINGLE: 100
-  COVERAGE_TOTAL: 100
+  COVERAGE_SINGLE: 60
+  COVERAGE_TOTAL: 60
 
 jobs:
   pytest:
@@ -32,7 +32,7 @@ jobs:
         uses: alexanderdamiani/pytester-cov@v1.2.0
         with:
           pytest-root-dir: '.'
-          cov-omit-list: 'test/*, temp/main3.py, temp/main4.py'
+          cov-omit-list: 'tests/*, docs/*, setup.py'
           cov-threshold-single: ${{ env.COVERAGE_SINGLE }}
           cov-threshold-total: ${{ env.COVERAGE_TOTAL }}
       
