@@ -1,5 +1,5 @@
 # jcon
-[![CI](https://github.com/AKARI-Inc/jcon/actions/workflows/default.yml/badge.svg)](https://github.com/AKARI-Inc/jcon/actions/workflows/default.yml)
+[![sphinx-deploy](https://github.com/AKARI-Inc/jcon/actions/workflows/default.yml/badge.svg)](https://github.com/AKARI-Inc/jcon/actions/workflows/default.yml)
 [![pages-build-deployment](https://github.com/AKARI-Inc/jcon/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AKARI-Inc/jcon/actions/workflows/pages/pages-build-deployment)
 ## 1. installation
 This package is only dependent on standard library of Python3.
