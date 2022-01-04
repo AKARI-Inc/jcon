@@ -1,3 +1,4 @@
+
 import importlib
 import inspect
 from collections import defaultdict
@@ -22,7 +23,7 @@ class RegistrationError(Error):
 
 class Registrable:
     """
-    Adapted from ``https://github.com/epwalsh/python-registrable``
+    Modified from ``https://github.com/epwalsh/python-registrable`` under its licence `Apache 2.0`.
     """
 
     _registry: Dict[Type, Dict[str, Type]] = defaultdict(dict)
