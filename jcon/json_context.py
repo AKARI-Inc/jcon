@@ -12,7 +12,7 @@ def json_read(jsonpath: str, *args, **kwargs):
     Yields:
         ``dict``: return ``dict`` read from ``jsonpath``
     """
-    json_file = open(jsonpath, 'r', *args, **kwargs)
+    json_file = open(jsonpath, *args, **kwargs)
     try:
         yield json.load(json_file)
     finally:

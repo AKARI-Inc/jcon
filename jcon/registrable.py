@@ -1,4 +1,8 @@
-from _typeshed import OpenTextMode
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from _typeshed import OpenTextMode
 
 import importlib
 import inspect
