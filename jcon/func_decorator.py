@@ -1,6 +1,6 @@
-from functools import wraps
-from typing import Callable
 from .json_context import json_read
+from functools import wraps
+from typing import Optional, Callable
 
 
 def configurable(func: Callable) -> Callable[[str], Callable]:
@@ -13,8 +13,8 @@ def configurable(func: Callable) -> Callable[[str], Callable]:
         Callable[[str], Callable]: Wrapped function which is input from ``.json`` path.
     """
     @wraps(func)
-    def wrapper(json_path: str, *args, **kwargs):
-        with json_read(json_path) as json_dict:
+    def wrapper(json_path: str, encoding: Optional[str] = None, *args, **kwargs):
+        with json_read(json_path, encoding=encoding) as json_dict:
             return func(*args, **kwargs, **json_dict)
 
     return wrapper
