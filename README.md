@@ -7,7 +7,7 @@ This package is only dependent on standard library of Python3.
 
 ## 2. Usage
 For more detail, see [document](https://akari-inc.github.io/jcon/).
-### 2.1 コンテクストマネージャで簡単にjsonパスから辞書として読み込み
+### 2.1 コンテクストマネージャで簡単に json パスから辞書として読み込み
 ```Python
 from jcon import json_read
 
@@ -17,7 +17,7 @@ with json_read(json_path) as json_dict:
     ...
 ```
 
-### 2.2 デコレータを1行追加で任意の関数をjson pathでconfig可能に
+### 2.2 デコレータを1行追加で任意の関数を json path で config 可能に
 ```Python
 import jcon
 json_path = "path/to/hoge.json"
@@ -31,8 +31,8 @@ def hoge(*args, **krags): # 任意の関数
 hoge(json_path)           # jsonのパスを入力にできる。もちろん，元々の引数もその後に入力できる。
 ```
 
-### 2.3 クラスを名前で登録(新概念)することが可能になり，jsonから文字列で呼び出すことができる。
-jsonの例
+### 2.3 クラスを名前で登録することが可能になり， json から文字列で呼び出すことができる。
+json の例
 ```Json
 {
     "type": "test",
@@ -59,6 +59,8 @@ class SubCls(BaseCls):
         self.subjects = subjects
         
 
-# 基底クラスの from_json メソッドでjson_pathからインスタンスを作成可能に。
+# 基底クラスの from_json メソッドで json_path からインスタンスを作成可能に。
 instance = BaseCls.from_json(json_path)
 ```
+
+ユースケースとしては，例えば機械学習でモデルのハイパラとともにモデルの class 名を保存しておくと再現等が容易になる (呼び出すものは個別の class ではなく基底 class で済む) ，など。
