@@ -2,9 +2,11 @@
 
 ## 1. installation
 This package is only dependent on standard library of Python3.
+
 `pip install git+https://github.com/AKARI-Inc/jcon.git`
 
 ## 2. Usage
+For more detail, see [document](https://akari-inc.github.io/jcon/).
 ### 2.1 コンテクストマネージャで簡単にjsonパスから辞書として読み込み
 ```Python
 from jcon import json_read
