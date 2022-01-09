@@ -1,5 +1,5 @@
 # jcon
-[![LICENCE](https://img.shields.io/badge/LICENCE-GPL--3.0-blue)](https://github.com/AKARI-Inc/jcon/LICENCE)
+[![LICENCE](https://img.shields.io/badge/LICENCE-GPL--3.0-blue)](https://github.com/AKARI-Inc/jcon/blob/main/LICENSE)
 [![sphinx-deploy](https://github.com/AKARI-Inc/jcon/actions/workflows/default.yml/badge.svg)](https://github.com/AKARI-Inc/jcon/actions/workflows/default.yml)
 [![pages-build-deployment](https://github.com/AKARI-Inc/jcon/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AKARI-Inc/jcon/actions/workflows/pages/pages-build-deployment)
 [![pytest](https://github.com/AKARI-Inc/jcon/actions/workflows/pytest.yml/badge.svg)](https://github.com/AKARI-Inc/jcon/actions/workflows/pytest.yml)
